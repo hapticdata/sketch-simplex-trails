@@ -20,19 +20,6 @@ module.exports = function(grunt){
 					optimizeCss: 'standard',
 					optimize: 'none',
 					mainConfigFile: 'public/javascripts/config.js',
-					shim: {
-						'underscore': { exports: '_' },
-						'backbone': { deps: ['jquery', 'underscore'], exports: 'Backbone' },
-						'Three': { exports: 'THREE' },
-						'Stats': { exports: 'Stats' },
-						'Processing': { exports: 'Processing' }
-					},
-					//findNestedDependencies: true,
-					preserveLicenseComments: false,
-					//NEVER FORGET THIS WHEN USING JADE PLUGIN
-					pragmasOnSave: {
-						excludeJade: true
-					},
 					modules: [
 						{
 							name: 'config',
