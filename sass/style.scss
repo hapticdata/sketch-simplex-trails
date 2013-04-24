@@ -1,0 +1,13 @@
+body {
+	overflow: none;
+	margin: 0;
+	padding: 0;
+	background-color: #0B252C; /*rgb(15,12,31);*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+canvas:focus {
+	outline: none;
+}

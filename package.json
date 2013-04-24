@@ -1,0 +1,20 @@
+{
+	"name": "simplex-trails",
+	"version": "1.0",
+	"dependencies": {
+		"requirejs": "~2.1.5"
+	},
+	"engines": {
+		"node": "0.8.x"
+	},
+	"devDependencies": {
+		"grunt-contrib-requirejs": "~0.4.x",
+		"grunt-contrib-compass": "~0.1.x",
+		"grunt": "~0.4.0x",
+		"grunt-contrib-watch": "~0.1.x",
+		"grunt-contrib-jshint": "~0.1.x",
+		"grunt-contrib-livereload": "0.1.x",
+		"grunt-regarde": "~0.1.x",
+		"grunt-s3": "~0.1.x"
+	}
+}
