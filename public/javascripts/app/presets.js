@@ -17,9 +17,10 @@ define([
 			y: 0.002,
 			z: 0.0005
 		}),
-		bg: TColor.newHex("0B252C"),
+		//bg: TColor.newRGBA(15/255,12/255,31/255,1.0),
+        bg: TColor.newHex("0B252C"),
 		colors: [
-			TColor.newHex("852D2E"),
+            TColor.newHex("852D2E"),
 			TColor.newHex("72603B"),
 			TColor.newHex("49866B"),
 			TColor.newHex("83302F")
@@ -81,16 +82,24 @@ define([
 			y: 0.0085,
 			z: 0.005
 		}),
-		bg: TColor.newRGBA(15/255,12/255,31/255,1.0),
+        bg: TColor.newHex("0B252C"),
 		colors: [
-			TColor.newRGBA(248/255,237/255,50/255,1.0),
-			TColor.newRGBA(125/255,194/255,66/255,1.0),
-			TColor.newRGBA(112/255,202/255,222/255,1.0)
+            TColor.newHex("852D2E"),
+			TColor.newHex("72603B"),
+			TColor.newHex("49866B"),
+			TColor.newHex("83302F")
 		]
 	},{
 		trailLength: 11,
 		lineWidth: 1,
 		sphereRadius: 210,
-		noiseStep: 0.06944444444444445
+		noiseStep: 0.06944444444444445,
+		bg: TColor.newRGBA(15/255,12/255,31/255,1.0),
+        colors: [
+            TColor.newHex("852D2E"),
+			TColor.newHex("72603B"),
+			TColor.newHex("49866B"),
+			TColor.newHex("83302F")
+		]
 	}];
 });
