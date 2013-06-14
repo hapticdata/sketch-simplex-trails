@@ -91,9 +91,12 @@ define([
             });
         };
 
-	
-		p5.size(Math.max(700,window.innerWidth),Math.max(700,window.innerHeight),p5.OPENGL);
-		p5.colorMode(p5.RGB,1);
+        var setSize = function(){	
+		    p5.size(Math.max(700,window.innerWidth),Math.max(700,window.innerHeight),p5.OPENGL);
+		};
+        setSize();
+        $(window).on('resize', setSize);
+        p5.colorMode(p5.RGB,1);
 		p5.background(options.bg.red(),options.bg.green(),options.bg.blue());
 		p5.noFill();
 		p5.stroke(1,0.25);
