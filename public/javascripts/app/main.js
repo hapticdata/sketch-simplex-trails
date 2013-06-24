@@ -39,9 +39,14 @@ define([
 	
 	function applyPreset(preset){
 		for(var prop in preset){
-			options[prop] = preset[prop];
-		}
+            if( options[prop] && options[prop].set ){
+                options[prop].set( preset[prop] );
+            } else {
+                options[prop] = preset[prop].copy ? preset[prop].copy() : preset[prop];
+            }
+        }
 	}
+    window.options = options;
 
 	function sketch( p5 ){
 
@@ -51,19 +56,19 @@ define([
 			applyPreset(presets[options.selectedPreset]);
             setTrailColors();
 		});
-		gui.add(options,"trailLength",5,300).step(1).name("Trail Length");
-		gui.add(options,"lineWidth",0.25,5).name("Trail Width");
-		gui.add(options,"sphereRadius",10,400).name("Sphere Radius");
+		gui.add(options,"trailLength",5,300).listen().step(1).name("Trail Length");
+		gui.add(options,"lineWidth",0.25,5).listen().name("Trail Width");
+		gui.add(options,"sphereRadius",10,400).listen().name("Sphere Radius");
 		var f1 = gui.addFolder('Noise');
-		f1.add(options.noiseScalar,"x",1,100).name("Radius");
-		f1.add(options.noiseScalar,"y",0,0.5).name("Azimuth");
-		f1.add(options.noiseScalar,"z",0,0.5).name("Zenith");
-		f1.add(options,"noiseStep",0,0.25).name("Step");
+		f1.add(options.noiseScalar,"x",1,100).listen().name("Radius");
+		f1.add(options.noiseScalar,"y",0,0.5).listen().name("Azimuth");
+		f1.add(options.noiseScalar,"z",0,0.5).listen().name("Zenith");
+		f1.add(options,"noiseStep",0,0.25).listen().name("Step");
 		f1.open();
 		var f2 = gui.addFolder('Rotation Speed');
-		f2.add(options.rotationSpeed,"x",0,0.05).name("X");
-		f2.add(options.rotationSpeed,"y",0,0.05).name("Y");
-		f2.add(options.rotationSpeed,"z",0,0.05).name("Z");
+		f2.add(options.rotationSpeed,"x",0,0.05).listen().name("X");
+		f2.add(options.rotationSpeed,"y",0,0.05).listen().name("Y");
+		f2.add(options.rotationSpeed,"z",0,0.05).listen().name("Z");
 		var trails = [],
 			gfx = new ToxiclibsSupport(p5),
 			rotation = new Vec3D(),

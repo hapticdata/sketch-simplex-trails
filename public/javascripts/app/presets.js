@@ -3,14 +3,36 @@ define([
 	'toxi/color/TColor'
 ],function ( Vec3D, TColor ){
 	return [{
+		trailLength: 27,
+		lineWidth: 1.25,
+		sphereRadius: 220,
+		noiseScalar: new Vec3D({
+			x: 10,
+			y: 0.138,
+			z: 0.025
+		}),
+		noiseStep: 0.014,
+		rotationSpeed: new Vec3D({
+			x: 0.0028,
+			y: 0.002,
+			z: 0.0005
+		}),
+        bg: TColor.newHex("003154"),
+		colors: [
+            TColor.newHex("68E6F9"),
+            TColor.newHex("E6636C"),
+            TColor.newHex("5ADACF"),
+            TColor.newHex("8A8578")
+		]
+	},{
 		trailLength: 90,
 		lineWidth: 1.25,
-		sphereRadius: 50,
-		noiseScalar: {
+		sphereRadius: 110,
+		noiseScalar: new Vec3D({
 			x: 10,
 			y: 0.05,
 			z: 0.025
-		},
+		}),
 		noiseStep: 0.05,
 		rotationSpeed: new Vec3D({
 			x: 0.001,
@@ -29,11 +51,11 @@ define([
 		trailLength: 90,
 		lineWidth: 1.25,
 		sphereRadius: 300,
-		noiseScalar: {
+		noiseScalar: new Vec3D({
 			x: 10,
 			y: 0.05,
 			z: 0.025
-		},
+		}),
 		noiseStep: 0.05,
 		rotationSpeed: new Vec3D({
 			x: 0.001,
@@ -50,11 +72,11 @@ define([
 		trailLength: 11,
 		lineWidth: 0.5,
 		sphereRadius: 200,
-		noiseScalar: {
+		noiseScalar: new Vec3D({
 			x: 100,
 			y: 0.305,
 			z: 0.175
-		},
+		}),
 		noiseStep: 0.05,
 		rotationSpeed: new Vec3D({
 			x: 0.001,
@@ -71,11 +93,11 @@ define([
 		trailLength: 55,
 		lineWidth: 0.25,
 		sphereRadius: 275,
-		noiseScalar: {
+		noiseScalar: new Vec3D({
 			x: 7.92,
 			y: 0.305,
 			z: 0.175
-		},
+		}),
 		noiseStep: 0.05,
 		rotationSpeed: new Vec3D({
 			x: 0.001,
